@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Printer Installer</title>
+      <script src="main.js"></script>
+       <link rel = "stylesheet" type = "text/css" href = "MacPrinter.css" />
+
+  </head>
+  <body >
+      <br />
+      <div id="PrntIcon"></div>
+
+      <div id="PageTitle">Printer Installer for Mac</div>
+
+<div id='PromptDiv' style="display:none">
+
+    <br><br>Please login with your Adobe username and password then select your city and click install.
+    <div>
+    <img src="./Images/Printer_Loader.gif" height="300px" width="200px" style="align-content:flex-start">
+    </div>
+      </div>
+<div id ='MainDiv'>
+      <div style="color:dimgrey">Please select the options and click Install</div>
+      <br/>
+<div id='RegDiv' class="Division" >&nbsp;&nbsp;Select Region
+    <select id = "RegionSel" class = "DropDown" onchange="populateDD(1)" >
+        <option>--Please select--</option>
+    <option>Americas</option>
+    <option>EMEA</option>
+    </select>
+</div>
+
+<br />
+
+<div id='SiteDiv' class = 'Division' style="display:none">  Select Site
+
+    <select id="SiteSel" class = "DropDown" onchange="populateDD(2)">
+        <option>--Please select--</option>
+
+    </select>
+</div>
+
+<br/>
+
+<div id='OfficeDiv' class = 'Division' style="display:none">  &nbsp;&nbsp;&nbsp;&nbsp;Select Office
+
+    <select id="OfficeSel" class = "DropDown" onchange="populateDD(3)">
+        <option>--Please select--</option>
+
+    </select>
+</div>
+
+<br/>
+    <div id='TowerDiv' class="TDivision" style="display:none">  &nbsp;&nbsp;&nbsp;Select Building
+    <select id="TowerSel" class = "DropDown" onchange="populateDD(4)">
+        <option>--Please select--</option>
+
+    </select>
+    </div>
+<br/>
+    <div id='FloorDiv' class="Division" style="display:none">  Select Floor/Printer
+    <select id="FloorSel" class = "DropDown" onchange="populateDD(5)">
+        <option>--Please select--</option>
+
+    </select>
+<br/>
+
+      </div>
+
+      <div id ='BtnSpace' class="Division">
+          <input type=Submit onclick="runC();" class = "BtnSty" value="Install"> &nbsp;&nbsp;&nbsp;
+      <input type=Button onclick="ClearC();" class = "BtnSty" value = " Reset ">
+      </div>
+
+  </div>
+<div id="Contact">
+    <a href="mailto:gtyagi@adobe.com">
+    <img id = "ContactImage", src=".\Images\ContactUs.png">
+    Contact us
+    </a>
+  </body>
+
+</html>

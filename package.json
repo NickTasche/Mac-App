@@ -1,0 +1,60 @@
+{
+  "name": "MacPrinter",
+  "version": "1.5.4",
+  "description": "Printer installer for MAC",
+  "author": "Gaurav Tyagi, Nick Tasche",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "asar pack MacPrinter-darwin-x64/MacPrinter.app/Contents/Resources/app MacPrinter-darwin-x64/MacPrinter.app/Contents/Resources/app.asar",
+    "clone": "git clone git@git.corp.adobe.com:ServiceDesk/MacPrinter.git && npm install",
+    "build": "electron-packager --overwrite --platform=darwin --arch=x64 --ignore=node_modules/* . MacPrinter && cp icon.icns ./MacPrinter-darwin-x64/MacPrinter.app/Contents/Resources/electron.icns",
+    "dist": "build"
+  },
+  "build": {
+    "appId": "com.macp.option",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg",
+      "icon": "icon.icns"
+    }
+  },
+
+  "build": {
+   "extraResources": [
+     {
+       "from": "./extraResources/",
+       "to": "extraResources",
+       "filter": [
+         "**/*"
+       ]
+     }
+   ]
+ },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electron/electron-quick-start.git"
+  },
+
+  "keywords": [
+    "MAC",
+    "Printer",
+    "Print",
+    "OS X"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.8.8",
+    "electron-builder": "^19.18.1",
+    "electron-packager": "^8.7.2"
+  },
+  "dependencies": {
+    "delay": "^4.1.0",
+    "electron-prompt": "^1.6.2"
+  },
+  "bugs": {
+    "url": "https://github.com/electron/electron-quick-start/issues"
+  },
+  "homepage": "https://github.com/electron/electron-quick-start#readme"
+}
